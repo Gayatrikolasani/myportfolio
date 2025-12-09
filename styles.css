@@ -509,51 +509,60 @@ body[data-theme="dark"] .navbar {
 }
 .resume-btn {
   display: inline-block;
-  background: #ff8abb;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ff8ac7, #ff5faf);
   color: white;
-  padding: 12px 24px;
+  padding: 12px 26px;
   border-radius: 30px;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255, 140, 186, 0.3);
+  box-shadow: 0 6px 14px rgba(255, 100, 170, 0.25);
+  transition: 0.3s ease-in-out;
 }
 
 .resume-btn:hover {
-  background: #ff72ae;
-  box-shadow: 0 6px 14px rgba(255, 140, 186, 0.4);
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 100, 170, 0.35);
 }
 .open-to-roles {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 30px;
-  background: rgba(255, 192, 218, 0.25);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px rgba(255, 180, 210, 0.15);
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 35px;
+  background: rgba(255, 200, 230, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 18px rgba(255, 150, 200, 0.18);
   text-align: center;
 }
 
 .open-to-roles h2 {
-  font-size: 1.8rem;
-  color: #ff3f8e;
-  margin-bottom: 16px;
+  font-size: 1.9rem;
+  color: #ff3d8b;
+  margin-bottom: 18px;
+  font-weight: 700;
 }
 
 .roles-list {
   list-style: none;
   padding: 0;
-  font-size: 1.1rem;
-  line-height: 1.8rem;
-  color: #444;
+  margin-top: 12px;
 }
 
 .roles-list li {
-  margin: 6px 0;
+  font-size: 1.15rem;
+  margin: 8px 0;
+  color: #444;
 }
 
+.dark-mode .open-to-roles {
+  background: rgba(30, 30, 30, 0.5);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .roles-list li {
+  color: #e6e6e6;
+}
 /* ===== Animations ===== */
 
 .fade-in {
