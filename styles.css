@@ -1,269 +1,157 @@
-/* ----------------------------------------------------------
-   THEME VARIABLES
----------------------------------------------------------- */
-
-/* LIGHT MODE */
-:root {
-  --bg: #fff7fb;
-  --bg-alt: #ffffff;
-  --text: #1a1a1a;
-  --text-light: #5a5a5a;
-  --accent: #ff4f81;
-  --accent-light: #ffa3c2;
-  --btn-light: #ffe4ef;
-  --card-shadow: rgba(0, 0, 0, 0.08);
-
-  --radius: 22px;
-  --transition: 0.3s ease;
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-/* DARK MODE */
+/* Light Theme Background */
+body.light {
+    background: linear-gradient(180deg, #ffe4ef, #f7f7f7);
+    color: #333;
+}
+
+/* Dark Theme */
 body.dark {
-  --bg: #0e0e0e;
-  --bg-alt: #1a1a1a;
-  --text: #ffffff;
-  --text-light: #bdbdbd;
-  --accent: #ff6fa2;
-  --btn-light: #312028;
-  --card-shadow: rgba(255, 255, 255, 0.08);
+    background: #0d0d0f;
+    color: #eee;
 }
 
-/* ----------------------------------------------------------
-   GLOBAL SETTINGS
----------------------------------------------------------- */
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: background var(--transition), color var(--transition);
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  text-decoration: none;
-  color: var(--accent);
-}
-
-section {
-  transition: var(--transition);
-}
-
-/* ----------------------------------------------------------
-   NAVBAR
----------------------------------------------------------- */
+/* Navbar */
 .navbar {
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 100;
 }
 
 .nav-logo {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--accent);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ff4fa1;
 }
 
 .nav-links a {
-  margin-left: 1rem;
-  color: var(--text);
-  font-weight: 500;
-  transition: var(--transition);
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+    opacity: 0.6;
 }
 
+.resume-btn {
+    padding: 6px 15px;
+    border-radius: 20px;
+    background: #ff4fa1;
+    color: white !important;
+}
+
+/* Theme Toggle */
 .theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: var(--transition);
+    margin-left: 20px;
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.7);
 }
 
-/* ----------------------------------------------------------
-   HERO SECTION (CIRCLE IMAGE INSIDE CARD)
----------------------------------------------------------- */
-.hero-section {
-  display: flex;
-  justify-content: center;
-  padding: 4rem 1rem;
-  background: linear-gradient(to bottom right, #ffeaf3, #fff7fb);
-}
-
-.hero-card {
-  background: var(--bg-alt);
-  width: 90%;
-  max-width: 430px;
-  padding: 2rem 2rem 2.7rem 2rem;
-  border-radius: var(--radius);
-  text-align: center;
-  box-shadow: 0 15px 35px var(--card-shadow);
-  transition: var(--transition);
-}
-
-.hero-image-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid var(--accent);
-  object-fit: cover;
-  margin: 0 auto 1rem auto;
-}
-
-.tag {
-  display: inline-block;
-  background: var(--btn-light);
-  padding: 0.4rem 0.9rem;
-  font-size: 0.85rem;
-  border-radius: 20px;
-  margin-bottom: 0.7rem;
-  color: var(--accent);
-}
-
-.hero-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0.6rem 0;
-}
-
-.highlight {
-  color: var(--accent);
-}
-
-.hero-description {
-  font-size: 1.05rem;
-  color: var(--text-light);
-  margin-bottom: 1.4rem;
-  line-height: 1.5rem;
-}
-
-.hero-btn-wrapper {
-  margin-top: 1rem;
-}
-
-/* BUTTON STYLES */
-.primary-btn {
-  background: linear-gradient(90deg, #ff7eb3, var(--accent));
-  padding: 0.9rem 1.7rem;
-  border-radius: 25px;
-  color: #fff;
-  font-weight: 600;
-  display: inline-block;
-  box-shadow: 0 5px 18px rgba(255, 79, 129, 0.25);
-  transition: var(--transition);
-}
-
-.primary-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(255, 79, 129, 0.35);
-}
-
-/* ----------------------------------------------------------
-   ABOUT PAGE
----------------------------------------------------------- */
-.page-title {
-  text-align: center;
-  font-size: 2.1rem;
-  color: var(--accent);
-  margin-top: 2rem;
-}
-
-.about-section {
-  padding: 2rem;
-}
-
-.about-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.about-image-card img {
-  width: 260px;
-  height: 290px;
-  border-radius: var(--radius);
-  border: 3px solid var(--accent);
-  object-fit: cover;
-}
-
-.about-text {
-  max-width: 500px;
-  color: var(--text-light);
-  line-height: 1.6rem;
-}
-
-/* ----------------------------------------------------------
-   PROJECTS PAGE
----------------------------------------------------------- */
-.projects-section {
-  padding: 2rem 1rem;
-}
-
-.projects-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.project-card {
-  display: flex;
-  gap: 1.7rem;
-  padding: 1.5rem;
-  background: var(--bg-alt);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 28px var(--card-shadow);
-  flex-wrap: wrap;
-}
-
-.project-card img {
-  width: 280px;
-  height: 200px;
-  border-radius: var(--radius);
-  object-fit: cover;
-  border: 2px solid var(--accent);
-}
-
-/* ----------------------------------------------------------
-   CONTACT PAGE
----------------------------------------------------------- */
-.contact-card-full {
-  background: var(--bg-alt);
-  padding: 2rem;
-  max-width: 500px;
-  margin: auto;
-  border-radius: var(--radius);
-  box-shadow: 0 12px 28px var(--card-shadow);
-  text-align: center;
-}
-
-.contact-text {
-  font-size: 1.05rem;
-  color: var(--text-light);
-  margin-bottom: 1.7rem;
-}
-
-.contact-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* ----------------------------------------------------------
-   RESPONSIVE DESIGN
----------------------------------------------------------- */
-@media (max-width: 900px) {
-  .project-card {
-    flex-direction: column;
+/* HERO SECTION */
+.hero {
     text-align: center;
-  }
+    padding: 3rem 1rem;
+    margin-top: 2rem;
+}
+
+/* Profile Image Circle */
+.profile-picture {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: -40px;
+    z-index: 10;
+    position: relative;
+    border: 6px solid white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* HERO CARD */
+.hero-card {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2.3rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(255, 80, 140, 0.15);
+    animation: fadeIn 1.2s ease;
+}
+
+body.dark .hero-card {
+    background: #1a1a1f;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Small elements */
+.tag {
+    display: inline-block;
+    background: #ffd4e7;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #ff4fa1;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-card h1 {
+    font-size: 2.4rem;
+}
+
+.hero-card h1 span {
+    color: #ff4fa1;
+}
+
+/* Tagline */
+.tagline {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* CTA BUTTON */
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(to right, #ff4fa1, #ff6fb3);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    box-shadow: 0px 8px 20px rgba(255, 80, 140, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
