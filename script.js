@@ -1,33 +1,45 @@
-// Theme toggle with localStorage
-const themeToggle = document.querySelector("[data-theme-toggle]");
+// Theme toggle
+const body = document.body;
+const themeToggleBtn = document.getElementById("theme-toggle");
 const themeIcon = document.querySelector(".theme-icon");
 
-function applyTheme(theme) {
-  if (theme === "dark") {
-    document.body.classList.add("dark-theme");
-    if (themeIcon) themeIcon.textContent = "☀️";
-  } else {
-    document.body.classList.remove("dark-theme");
-    if (themeIcon) themeIcon.textContent = "🌙";
-  }
+// Load saved theme
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  body.classList.add("dark-theme");
+  body.classList.remove("light-theme");
+  themeIcon.textContent = "☀️";
+} else {
+  body.classList.add("light-theme");
+  themeIcon.textContent = "🌙";
 }
 
-(function initTheme() {
-  const stored = localStorage.getItem("theme");
-  if (stored) {
-    applyTheme(stored);
-  } else {
-    const prefersDark = window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(prefersDark ? "dark" : "light");
-  }
-})();
+themeToggleBtn.addEventListener("click", () => {
+  const isDark = body.classList.toggle("dark-theme");
+  body.classList.toggle("light-theme", !isDark);
+  themeIcon.textContent = isDark ? "☀️" : "🌙";
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
 
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    const isDark = document.body.classList.contains("dark-theme");
-    const next = isDark ? "light" : "dark";
-    applyTheme(next);
-    localStorage.setItem("theme", next);
-  });
+// Reveal on scroll
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+revealElements.forEach((el) => observer.observe(el));
+
+// Footer year
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
 }
