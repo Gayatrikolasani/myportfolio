@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body class="light">
 
     <!-- Navigation -->
     <header class="navbar">
@@ -20,8 +20,9 @@
         <nav class="nav-links">
             <a href="portfolio.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="skills.html">Skills</a>
+            <a href="#skills">Skills</a>
             <a href="contact.html">Contact</a>
+            <a href="Gayatri_Kolasani_Resume.pdf" target="_blank" class="resume-link">Resume</a>
         </nav>
 
         <button id="themeToggle" class="theme-toggle">🌙</button>
@@ -31,7 +32,9 @@
     <!-- HERO SECTION -->
     <section class="hero-section">
 
+        <!-- LEFT SIDE ── TEXT -->
         <div class="hero-text">
+
             <span class="tag">Portfolio</span>
 
             <h1 class="hero-title">
@@ -39,7 +42,7 @@
             </h1>
 
             <p class="hero-tagline">
-                "Transforming data into decisions — where analytical insight meets AI intelligence".
+                Transforming data into decisions — where analytical insight meets AI intelligence.
             </p>
 
             <p class="hero-description">
@@ -47,9 +50,21 @@
                 from AI-powered career guidance to autonomous robotics.
             </p>
 
-            <a href="portfolio.html" class="btn primary-btn">View my portfolio</a>
+            <div class="hero-actions">
+                <a href="portfolio.html" class="btn primary-btn">View my portfolio</a>
+
+                <!-- Resume Button -->
+                <a href="KolasaniG.pdf" 
+                   class="btn secondary-btn" 
+                   target="_blank" 
+                   rel="noopener">
+                    Download résumé
+                </a>
+            </div>
+
         </div>
 
+        <!-- RIGHT SIDE ── PROFILE IMAGE -->
         <div class="hero-image-wrapper">
             <img src="profile.jpg" alt="Gayatri Kolasani" class="hero-image">
         </div>
