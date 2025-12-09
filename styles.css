@@ -525,6 +525,34 @@ body[data-theme="dark"] .navbar {
   box-shadow: 0 6px 14px rgba(255, 140, 186, 0.4);
   transform: translateY(-3px);
 }
+.open-to-roles {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 192, 218, 0.25);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(255, 180, 210, 0.15);
+  text-align: center;
+}
+
+.open-to-roles h2 {
+  font-size: 1.8rem;
+  color: #ff3f8e;
+  margin-bottom: 16px;
+}
+
+.roles-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  color: #444;
+}
+
+.roles-list li {
+  margin: 6px 0;
+}
 
 /* ===== Animations ===== */
 
