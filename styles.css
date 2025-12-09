@@ -1,3 +1,42 @@
+/* ---------------------------
+   ABOUT PAGE
+---------------------------- */
+
+.page-title {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent-dark);
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+.about-image-card img {
+  width: 290px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px var(--shadow);
+  border: 4px solid var(--accent);
+}
+
+.about-text {
+  max-width: 550px;
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.about-text p {
+  margin-bottom: 1.2rem;
+}
 /* -----------------------------------
    FLOATING ROSE-GOLD SHAPES
 ----------------------------------- */
