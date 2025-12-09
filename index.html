@@ -3,22 +3,248 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gayatri Kolasani | Welcome</title>
+  <title>Gayatri Kolasani | Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <!-- Optional Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="landing">
-  <main class="landing-wrapper">
-    <div class="landing-card fade-in-up">
-      <div class="landing-badge">Portfolio</div>
-      <h1>Hi, I’m <span>Gayatri Kolasani</span></h1>
-      <p>
-        “Transforming data into decisions — where analytical insight meets AI intelligence.”
-      </p>
-      <button class="primary-btn" onclick="window.location.href='portfolio.html'">
-        View my portfolio
+<body class="light-theme">
+  <!-- Top navigation -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <div class="brand">
+        <div class="brand-logo">GK</div>
+        <div class="brand-text">
+          <span class="brand-name">Gayatri Kolasani</span>
+          <span class="brand-tagline">Data & AI Enthusiast</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="theme-toggle" class="icon-button" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
       </button>
     </div>
+  </header>
+
+  <!-- Hero / Welcome section -->
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <p class="hero-eyebrow">Welcome to my portfolio</p>
+          <h1>Turning <span class="highlight">data</span> into decisions.</h1>
+          <p class="hero-subtitle">
+            I’m a CSE (AI) graduate passionate about data analytics, machine learning,
+            and building intelligent systems that solve real problems.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View my work</a>
+            <a href="#contact" class="btn btn-ghost">Contact me</a>
+          </div>
+          <div class="hero-meta">
+            <span>Fresher • Data & ML</span>
+            <span>Open to roles: Data Analyst, ML Engineer (Junior), Business Analyst</span>
+          </div>
+        </div>
+
+        <div class="hero-media reveal delay-1">
+          <!-- YOUR IMAGE GOES HERE -->
+          <!-- Put your picture as: images/profile.jpeg  -->
+          <div class="profile-card">
+            <div class="profile-image-wrapper">
+              <img src="images/profile.jpeg" alt="Gayatri Kolasani" class="profile-image" />
+            </div>
+            <div class="profile-info">
+              <p class="profile-name">Gayatri Kolasani</p>
+              <p class="profile-role">CSE (AI) Graduate • Data & ML</p>
+              <p class="profile-location">Guntur, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container reveal">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-text">
+          I am a Computer Science & Engineering (Artificial Intelligence) graduate (2025) with
+          hands-on experience in data preprocessing, model development, and building end-to-end
+          ML-driven applications. My recent work includes an AI-powered career guidance system
+          that combines TF-IDF, KNN, and XGBoost to deliver personalized recommendations with
+          strong user satisfaction.
+        </p>
+        <p class="section-text">
+          I enjoy translating complex datasets into clear insights and am particularly interested in
+          roles at the intersection of data analytics, machine learning, and business decision-making.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+      <div class="container reveal">
+        <h2 class="section-title">Skills</h2>
+        <div class="chips-grid">
+          <div class="chip">Python & SQL</div>
+          <div class="chip">Machine Learning</div>
+          <div class="chip">Data Preprocessing</div>
+          <div class="chip">Data Visualization</div>
+          <div class="chip">Problem-Solving</div>
+          <div class="chip">Analytical Thinking/div>
+          <div class="chip">Team Work & Communication</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+
+        <div class="projects-grid">
+          <!-- Project 1: AI Powered Career Pathway Guidance For Personalization-->
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <!-- Add a relevant project image here -->
+              <!-- e.g., images/career-guidance.jpeg -->
+              <img src="images/career-guidance.jpeg" alt="AI-Powered Career Guidance System" class="project-image" />
+            </div>
+            <div class="project-content">
+              <h3>AI-Powered Career Pathway Guidance System</h3>
+              <p class="project-tagline">
+                ML-based recommendation engine for personalized career suggestions.
+              </p>
+              <p class="project-text">
+                Built an AI-driven career guidance system that generates personalized
+                career recommendations by combining TF-IDF vectorization, K-Nearest
+                Neighbors, and XGBoost. The system delivered over 500+ recommendations
+                with ~80% user satisfaction, based on feedback surveys.
+              </p>
+              <ul class="project-bullets">
+                <li>Optimized data preprocessing pipelines, improving feature extraction speed by ~30%.</li>
+                <li>Used XGBoost for ranking career paths, boosting prediction accuracy by ~20%.</li>
+                <li>Implemented skill-gap analysis and suggested courses, tools, and certifications to improve employability.</li>
+                <li>Integrated user feedback loops and evaluated relevance using Cohen’s Kappa for continuous improvement.</li>
+              </ul>
+              <div class="project-meta">
+                <span class="pill">Python</span>
+                <span class="pill">Scikit-learn</span>
+                <span class="pill">TF-IDF</span>
+                <span class="pill">KNN</span>
+                <span class="pill">XGBoost</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Autonomous Shopping Trolley -->
+          <article class="project-card reveal delay-1">
+            <div class="project-image-wrapper">
+              <!-- Add a relevant project image here -->
+              <!-- e.g., images/robot-trolley.jpeg -->
+              <img src="images/robot-trolley.jpeg" alt="Autonomous Shopping Trolley" class="project-image" />
+            </div>
+            <div class="project-content">
+              <h3>Autonomous Shopping Trolley</h3>
+              <p class="project-tagline">
+                Robotics solution built in a 36-hour national-level hackathon.
+              </p>
+              <p class="project-text">
+                Co-developed an autonomous robot trolley using ROS and Python to
+                facilitate goods transportation across warehouse, healthcare, and
+                retail environments. Enhanced situational awareness through 3D
+                visualization and simulation, resulting in smoother navigation and
+                operation.
+              </p>
+              <ul class="project-bullets">
+                <li>Integrated ROS and Python, reducing execution errors by ~60% through system optimization.</li>
+                <li>Led a team of six, coordinating development tasks and improving project efficiency.</li>
+                <li>Designed simulations to validate movement, obstacle handling, and path planning before deployment.</li>
+              </ul>
+              <div class="project-meta">
+                <span class="pill">ROS</span>
+                <span class="pill">Python</span>
+                <span class="pill">Robotics</span>
+                <span class="pill">Simulation</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publication -->
+    <section class="section section-alt">
+      <div class="container reveal">
+        <h2 class="section-title">Publication</h2>
+        <div class="card">
+          <h3>AI-Powered Career Pathway Guidance for Personalization</h3>
+          <p class="section-text">
+            Presented at the National Conference on Innovative Challenges in Deep Learning and its
+            Applications (NCICDLA-25). The work focused on combining AI-driven recommendation logic
+            with real-world datasets to improve career decision-making for students.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container reveal">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-text section-center">
+          I’m actively looking for opportunities in data analytics, machine learning, and
+          related roles. Feel free to reach out for roles, collaborations, or just a chat.
+        </p>
+
+        <!-- Option B style – side-by-side info + quick actions -->
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Contact Info</h3>
+            <ul class="contact-list">
+              <li><span class="contact-label">Email:</span> <a href="mailto:gayatrikolasani@gmail.com">gayatrikolasani@gmail.com</a></li>
+              <li><span class="contact-label">Phone:</span> <a href="tel:+916305881538">+91 6305881538</a></li>
+              <li><span class="contact-label">Location:</span> Guntur, Andhra Pradesh, India</li>
+            </ul>
+          </div>
+
+          <div class="contact-card">
+            <h3>Quick Links</h3>
+            <div class="contact-buttons">
+              <a href="https://www.linkedin.com/in/gayatri-kolasani-gk25" target="_blank" class="btn btn-primary btn-block">
+                View LinkedIn
+              </a>
+              <!-- If you upload your resume PDF to GitHub Pages, update this link -->
+              <a href="KolasaniG.pdf" target="_blank" class="btn btn-ghost btn-block">
+                Download Resume
+              </a>
+            </div>
+            <p class="contact-note">
+              Open to: Data Analyst • Junior ML Engineer • Business/Data Analyst roles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Gayatri Kolasani</span>
+      <span class="footer-note">Built with HTML, CSS &amp; JavaScript</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
