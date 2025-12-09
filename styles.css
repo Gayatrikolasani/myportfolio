@@ -155,3 +155,44 @@ body.dark .hero-card {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+/* ABOUT PAGE */
+.about-section {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.about-card {
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(255, 80, 140, 0.15);
+}
+
+body.dark .about-card {
+    background: #1a1a1f;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.about-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-card p {
+    text-align: left;
+    margin: 1rem 0;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.skills-list {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.skills-list li {
+    margin: 6px 0;
+}
