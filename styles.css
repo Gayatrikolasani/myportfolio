@@ -507,6 +507,24 @@ body[data-theme="dark"] .navbar {
   font-size: 0.82rem;
   color: var(--text-muted);
 }
+.resume-btn {
+  display: inline-block;
+  background: #ff8abb;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 140, 186, 0.3);
+}
+
+.resume-btn:hover {
+  background: #ff72ae;
+  box-shadow: 0 6px 14px rgba(255, 140, 186, 0.4);
+  transform: translateY(-3px);
+}
 
 /* ===== Animations ===== */
 
