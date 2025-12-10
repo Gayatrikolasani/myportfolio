@@ -678,3 +678,47 @@ body.dark-theme .navbar {
   transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+/* ----- MOBILE MENU ----- */
+@media (max-width: 768px) {
+  .nav-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .nav-menu-toggle span {
+    width: 22px;
+    height: 3px;
+    background: var(--text-color);
+    border-radius: 3px;
+  }
+
+  /* Hide menu initially */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Show when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+    font-size: 1.1rem;
+  }
+}
