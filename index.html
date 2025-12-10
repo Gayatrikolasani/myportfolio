@@ -4,68 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gayatri Kolasani • Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=1000" />
+  <link rel="stylesheet" href="styles.css?v=1" />
 </head>
 
 <body>
   <!-- NAVBAR -->
- <header class="navbar">
-  <div class="nav-left">
-    <a href="index.html" class="nav-logo">GK</a>
-  </div>
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">GK</a>
+    </div>
 
-  <!-- Mobile Menu Toggle -->
-  <button class="nav-menu-toggle" id="navToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+    <button id="navToggle" class="nav-menu-toggle">
+      <span></span><span></span><span></span>
+    </button>
 
-  <!-- Navigation Links -->
-  <nav class="nav-links" id="navLinks">
-    <a href="portfolio.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="skills.html">Skills</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <nav id="navLinks" class="nav-links">
+      <a href="portfolio.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <button id="themeToggle" class="theme-toggle">🌙</button>
-</header>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </header>
 
+  <!-- HERO SECTION -->
   <main class="page-wrapper fade-in">
-    <!-- HOME HERO -->
     <section class="home-hero">
-      <div class="hero-photo-wrapper">
-        <div class="hero-photo-ring">
-          <img src="profile.jpg"
-               alt="Gayatri Kolasani"
-               class="hero-profile-img" />
+      <div class="hero-left">
+        <p class="hero-tag">CSE (AI) • Data & Business Analytics</p>
+
+        <h1 class="hero-title">
+          Aspiring <span>Data Analyst</span> and AI-Enthusiast
+        </h1>
+
+        <p class="hero-caption">
+          “Transforming data into decisions — where analytical insight meets AI intelligence.”
+        </p>
+
+        <div class="hero-buttons">
+          <a href="portfolio.html" class="btn btn-primary">View my portfolio</a>
+          <a href="resume.pdf" class="btn btn-secondary">Download resume</a>
         </div>
       </div>
 
-      <p class="hero-tag">
-        CSE (AI) • Data & Business Analytics
-      </p>
-
-      <h1 class="hero-heading">
-        Aspiring <span>Data Analyst</span> and AI-Enthusiast
-      </h1>
-
-      <p class="hero-subtitle">
-        “Transforming data into decisions — where analytical insight meets AI intelligence.”
-      </p>
-
-      <div class="hero-actions">
-        <a href="portfolio.html" class="btn btn-primary">View my portfolio</a>
-        <a href="KolasaniG.pdf" class="btn btn-secondary" download>Download resume</a>
+      <div class="hero-right">
+        <img src="profile.jpg" class="hero-profile-img" alt="Gayatri Profile" />
       </div>
     </section>
 
-    <footer class="footer">
-      © 2025 by Gayatri Kolasani
-    </footer>
+    <footer class="footer">© 2025 • Gayatri Kolasani</footer>
   </main>
 
-  <script src="script.js?v=200"></script>
+<script src="script.js"></script>
 </body>
 </html>
