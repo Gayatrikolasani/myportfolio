@@ -1,4 +1,33 @@
 /* ===================================
+   THEME VARIABLES
+=================================== */
+:root {
+  --bg: #fdeffd;
+  --text: #2b2b2b;
+  --card: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.65);
+  --nav-border: #ffffff60;
+  --accent: #ff4fa2;
+  --accent-light: #ff87c7;
+  --tag-bg: #ffb7d9;
+  --shadow: #ffd2e880;
+  --shadow-pink: #ffb7d966;
+}
+
+.dark-theme {
+  --bg: #1a1a1a;
+  --text: #f5f5f5;
+  --card: #2c2c2c;
+  --nav-bg: rgba(40, 40, 40, 0.7);
+  --nav-border: #444;
+  --accent: #ff8dc7;
+  --accent-light: #ffb0dd;
+  --tag-bg: #66385c;
+  --shadow: #00000060;
+  --shadow-pink: #00000040;
+}
+
+/* ===================================
    BASE
 =================================== */
 * {
@@ -9,9 +38,10 @@
 }
 
 body {
-  background: #fdeffd;
-  color: #2b2b2b;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
+  transition: 0.3s ease;
 }
 
 /* Page wrapper */
@@ -40,20 +70,20 @@ body {
   top: 0;
   left: 0;
   padding: 0.8rem 1.4rem;
-  background: rgba(255, 255, 255, 0.65);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   border-radius: 0 0 20px 20px;
-  border: 1px solid #ffffff60;
+  border: 1px solid var(--nav-border);
 }
 
 .nav-logo {
   font-size: 1rem;
   font-weight: 600;
-  background: #ff69b4;
+  background: var(--accent);
   color: white;
   padding: 8px 14px;
   border-radius: 50%;
@@ -65,7 +95,8 @@ body {
   width: 40px;
   height: 40px;
   border: none;
-  background: white;
+  background: var(--card);
+  color: var(--text);
   border-radius: 50%;
   display: none;
   align-items: center;
@@ -76,7 +107,7 @@ body {
 .nav-menu-toggle span {
   width: 18px;
   height: 2px;
-  background: #333;
+  background: var(--text);
   margin: 3px 0;
   display: block;
 }
@@ -89,24 +120,26 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: var(--text);
   font-weight: 500;
   transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #ff4fa2;
+  color: var(--accent);
 }
 
 /* Theme icon */
 .theme-toggle {
   border: none;
-  background: white;
+  background: var(--card);
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.2rem;
+  color: var(--text);
+  transition: 0.3s ease;
 }
 
 /* ===================================
@@ -127,7 +160,7 @@ body {
 }
 
 .hero-tag {
-  background: #ffb7d9;
+  background: var(--tag-bg);
   padding: 4px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -142,7 +175,7 @@ body {
 }
 
 .hero-title span {
-  color: #ff3e9e;
+  color: var(--accent);
 }
 
 .hero-caption {
@@ -163,7 +196,7 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(to right, #ff4fa2, #ff87c7);
+  background: linear-gradient(to right, var(--accent), var(--accent-light));
   color: white;
 }
 
@@ -172,12 +205,12 @@ body {
 }
 
 .btn-secondary {
-  border: 2px solid #ff4fa2;
-  color: #ff4fa2;
+  border: 2px solid var(--accent);
+  color: var(--accent);
 }
 
 .btn-secondary:hover {
-  background: #ffe9f3;
+  background: var(--tag-bg);
 }
 
 /* Right image */
@@ -192,20 +225,21 @@ body {
   height: 270px;
   border-radius: 50%;
   object-fit: cover;
-  border: 6px solid #ffb7d9;
-  box-shadow: 0 0 30px #ffb7d966;
+  border: 6px solid var(--tag-bg);
+  box-shadow: 0 0 30px var(--shadow-pink);
 }
 
 /* ===================================
-   ABOUT + PROJECTS + SKILLS + CONTACT
+   SECTIONS
 =================================== */
 
 .section-card {
-  background: white;
+  background: var(--card);
   padding: 2rem;
   border-radius: 22px;
-  box-shadow: 0 0 20px #ffd2e880;
+  box-shadow: 0 0 20px var(--shadow);
   margin-bottom: 2rem;
+  color: var(--text);
 }
 
 .section-title {
@@ -215,7 +249,8 @@ body {
 }
 
 .section-subtitle {
-  color: #555;
+  color: var(--text);
+  opacity: 0.8;
   margin-bottom: 1.5rem;
 }
 
@@ -225,11 +260,13 @@ body {
   margin-bottom: 1rem;
 }
 
+/* FOOTER */
 .footer {
   text-align: center;
   margin-top: 3rem;
   padding: 2rem 0;
   font-size: 0.85rem;
+  color: var(--text);
 }
 
 /* ===================================
@@ -246,13 +283,13 @@ body {
     position: absolute;
     top: 75px;
     right: 10px;
-    background: white;
+    background: var(--card);
     padding: 1rem 2rem;
     border-radius: 15px;
     flex-direction: column;
     gap: 1rem;
     display: none;
-    box-shadow: 0 4px 25px #00000025;
+    box-shadow: 0 4px 25px var(--shadow);
   }
 
   .nav-links.active {
