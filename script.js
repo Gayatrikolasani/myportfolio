@@ -1,38 +1,44 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-  const themeToggle = document.getElementById("themeToggle");
-  const navToggle = document.getElementById("navToggle");
-  const navLinks = document.getElementById("navLinks");
+// ======================================================
+// THEME TOGGLE
+// ======================================================
+const body = document.body;
+const themeToggleBtn = document.getElementById("themeToggle");
 
-  /* ---------- Theme: load saved preference ---------- */
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    body.classList.add("dark-theme");
-    if (themeToggle) themeToggle.textContent = "☀️";
-  } else {
-    if (themeToggle) themeToggle.textContent = "🌙";
-  }
+// Load saved theme
+const savedTheme = localStorage.getItem("gk-theme");
 
-  /* ---------- Theme: toggle ---------- */
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const isDark = body.classList.toggle("dark-theme");
-      themeToggle.textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("theme", isDark ? "dark" : "light");
+if (savedTheme === "dark") {
+  body.classList.add("dark-theme");
+  if (themeToggleBtn) themeToggleBtn.textContent = "☀️";
+} else {
+  body.classList.remove("dark-theme");
+  if (themeToggleBtn) themeToggleBtn.textContent = "🌙";
+}
+
+// Click to toggle
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", () => {
+    const isDark = body.classList.toggle("dark-theme");
+    localStorage.setItem("gk-theme", isDark ? "dark" : "light");
+    themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
+  });
+}
+
+// ======================================================
+// MOBILE NAV TOGGLE
+// ======================================================
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Close menu when a link is clicked (mobile)
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
     });
-  }
-
-  /* ---------- Mobile navigation ---------- */
-  if (navToggle && navLinks) {
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    // close menu when a link is clicked
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
-  }
-});
+  });
+}
