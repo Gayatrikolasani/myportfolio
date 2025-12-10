@@ -39,3 +39,28 @@ themeBtn.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
   }
 });
+const themeToggle = document.getElementById("theme-toggle");
+const icon = document.getElementById("theme-icon");
+
+// Check saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark-theme");
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+}
+
+themeToggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark-theme");
+
+    const isDark = document.documentElement.classList.contains("dark-theme");
+
+    if (isDark) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+        localStorage.setItem("theme", "dark");
+    } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+        localStorage.setItem("theme", "light");
+    }
+});
