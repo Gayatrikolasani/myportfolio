@@ -1,38 +1,68 @@
-// THEME TOGGLE (light / dark with localStorage)
-(function () {
-  const body = document.body;
-  const toggleBtn = document.getElementById("themeToggle");
+/* ===========================================
+   THEME TOGGLE (Light / Dark Mode)
+   =========================================== */
 
-  if (!toggleBtn) return;
+const toggle = document.getElementById("themeToggle");
 
-  const savedTheme = localStorage.getItem("gk-theme");
-  if (savedTheme === "dark") {
-    body.classList.add("dark-theme");
-    toggleBtn.textContent = "☀️";
-  } else {
-    toggleBtn.textContent = "🌙";
-  }
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
 
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark-theme");
-    const isDark = body.classList.contains("dark-theme");
-    toggleBtn.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("gk-theme", isDark ? "dark" : "light");
+    // Toggle icon 🌙 / ☀️
+    if (document.body.classList.contains("dark-theme")) {
+      toggle.textContent = "☀️";
+    } else {
+      toggle.textContent = "🌙";
+    }
   });
-})();
+}
 
-// SIMPLE FADE-IN ON SCROLL
-const fadeEls = document.querySelectorAll(".fade-in");
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
-fadeEls.forEach((el)=>
-   observer.observe(el));
+/* ===========================================
+   FADE-IN ANIMATION ON PAGE LOAD
+   =========================================== */
+const fadeElements = document.querySelectorAll(".fade-in");
+
+fadeElements.forEach((el, index) => {
+  setTimeout(() => el.classList.add("show"), 120 + index * 90);
+});
+
+/* ===========================================
+   NAVBAR ACTIVE LINK HIGHLIGHT
+   =========================================== */
+const navLinks = document.querySelectorAll(".nav-links a");
+const currentPage = window.location.pathname.split("/").pop();
+
+navLinks.forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
+
+/* ===========================================
+   SMOOTH SCROLL FOR INTERNAL LINKS
+   =========================================== */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", function (e) {
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
+  });
+});
+
+/* ===========================================
+   MOBILE NAV (Optional future feature)
+   =========================================== */
+
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const mobileNav = document.getElementById("mobileNav");
+
+if (mobileMenuBtn && mobileNav) {
+  mobileMenuBtn.addEventListener("click", () => {
+    mobileNav.classList.toggle("open");
+  });
+}
