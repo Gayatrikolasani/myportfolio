@@ -34,26 +34,35 @@ body {
 
 /* Dark theme override */
 body.dark-theme {
-  --bg-body: #0c0d12;
-  --bg-card: #151623;
-  --bg-pill: #262742;
-  --bg-pill-soft: #1c1d33;
-  --bg-nav: rgba(10, 11, 18, 0.9);
-  --border-soft: #333553;
-  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.8);
+  /* ===================================
+   CLEAN DARK THEME — FINAL VERSION
+=================================== */
+body.dark-theme {
+  /* Background tokens */
+  --bg-body: #0b0b0d;              /* Deep clean dark background */
+  --bg-card: #16161a;              /* Soft dark surface */
+  --bg-pill: #252530;              /* Tag / pills */
+  --bg-pill-soft: #1d1d23;         /* Soft contrast areas */
+  --bg-nav: rgba(14, 14, 18, 0.92);/* Dark navbar */
+  --border-soft: #2e2e39;
 
-  --accent: #ff77c0;
+  /* Shadows */
+  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.7);
+
+  /* Accent colors (pink stays) */
+  --accent: #ff7ac4;
   --accent-soft: #ff4fa2;
-  --accent-strong: #ff90d0;
+  --accent-strong: #ffa2da;
 
-  --text-main: #f5f5ff;
-  --text-muted: #b1b3cb;
+  /* Text */
+  --text-main: #f5f5fa;
+  --text-muted: #b5b5c7;
   --text-on-accent: #ffffff;
 }
 
-body {
-  background: radial-gradient(circle at top, #ffe4f6, var(--bg-body));
-  color: var(--text-main);
+/* Remove purple gradient glow */
+body.dark-theme {
+  background: linear-gradient(to bottom, #0b0b0d 0%, #13131a 100%);
 }
 
 /* Page wrapper (all inside pages) */
