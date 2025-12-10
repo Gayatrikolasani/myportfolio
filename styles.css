@@ -49,13 +49,14 @@
 body {
   background: var(--bg);
   color: var(--text);
+  line-height: 1.6;
   transition: background 0.3s, color 0.3s;
 }
 
 .page-wrapper {
   max-width: 1100px;
   margin: auto;
-  padding: 8rem 1rem 4rem;
+  padding: 8rem 1rem 4rem;  /* space for fixed navbar */
 }
 
 .fade-in {
@@ -80,17 +81,17 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  padding: 0.8rem 1rem;
-  background: rgba(255, 255, 255, 0.55);
+  padding: 0.8rem 1.4rem;
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(20px);
   border-radius: 0 0 20px 20px;
-  border: 1px solid #ffffff50;
+  border: 1px solid #ffffff60;
 
   z-index: 1000;
 }
 
 .dark-theme .navbar {
-  background: rgba(20, 20, 30, 0.6);
+  background: rgba(20, 20, 30, 0.65);
   border: 1px solid #333;
 }
 
@@ -123,7 +124,7 @@ body {
   color: var(--accent);
 }
 
-/* theme toggle icon */
+/* theme toggle button */
 .theme-toggle {
   background: var(--card);
   border: none;
@@ -135,7 +136,7 @@ body {
   color: var(--text);
 }
 
-/* mobile toggle */
+/* mobile menu btn */
 .nav-menu-toggle {
   width: 40px;
   height: 40px;
@@ -157,7 +158,7 @@ body {
 }
 
 /* =========================================================
-   HOME (Hero Section)
+   HOME (Hero section)
 ========================================================= */
 .home-hero {
   display: flex;
@@ -167,32 +168,39 @@ body {
   margin-top: 3rem;
 }
 
-/* NEW: Your intro line */
-.hero-intro {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
+.hero-left {
+  flex: 1;
 }
 
-.name-highlight {
-  color: var(--accent);
-  font-weight: 700;
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-tag {
   background: var(--tag-bg);
   padding: 4px 14px;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   display: inline-block;
   margin-bottom: 1rem;
+}
+
+/* "Hi, I'm ..." line */
+.hero-intro {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: var(--accent);      /* whole line pink on all devices */
+}
+
+.hero-intro span {
+  font-weight: 600;
 }
 
 .hero-title {
   font-size: 2.3rem;
   font-weight: 700;
-  line-height: 1.3;
 }
 
 .hero-title span {
@@ -206,7 +214,19 @@ body {
   color: var(--muted);
 }
 
-/* buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-footer {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Buttons */
 .btn {
   padding: 12px 26px;
   border-radius: 30px;
@@ -222,11 +242,19 @@ body {
   color: white;
 }
 
+.btn-primary:hover { opacity: 0.85; }
+
 .btn-secondary {
   border: 2px solid var(--accent);
   color: var(--accent);
+  background: transparent;
 }
 
+.btn-secondary:hover {
+  background: var(--soft-bg);
+}
+
+/* Profile image */
 .hero-profile-img {
   width: 270px;
   height: 270px;
@@ -237,7 +265,7 @@ body {
 }
 
 /* =========================================================
-   ABOUT PAGE
+   PAGE HEADERS
 ========================================================= */
 .page-header {
   margin-bottom: 2rem;
@@ -246,6 +274,7 @@ body {
 .page-title {
   font-size: 2rem;
   font-weight: 700;
+  margin-bottom: 0.2rem;
 }
 
 .page-subtitle {
@@ -253,6 +282,9 @@ body {
   max-width: 600px;
 }
 
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
 .about-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -284,6 +316,16 @@ body {
   border-radius: 14px;
 }
 
+.roles-list {
+  margin-top: 0.6rem;
+  padding-left: 1.2rem;
+}
+
+/* pills */
+.personality-title {
+  margin-bottom: 0.8rem;
+}
+
 .personality-pills {
   display: flex;
   flex-wrap: wrap;
@@ -296,6 +338,11 @@ body {
   padding: 5px 12px;
   border-radius: 14px;
   font-size: 0.8rem;
+}
+
+.personality-bullets {
+  margin-top: 0.8rem;
+  padding-left: 1.2rem;
 }
 
 /* =========================================================
@@ -322,6 +369,21 @@ body {
   height: 260px;
   border-radius: 20px;
   object-fit: cover;
+  box-shadow: 0 0 20px var(--card-shadow);
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.project-points {
+  padding-left: 1.2rem;
 }
 
 /* =========================================================
@@ -331,6 +393,10 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.4rem;
+}
+
+.skill-card h2 {
+  font-size: 1.1rem;
 }
 
 .skill-card ul {
@@ -358,21 +424,29 @@ body {
   text-align: center;
   margin-top: 3rem;
   color: var(--muted);
+  font-size: 0.85rem;
 }
 
 /* =========================================================
-   MOBILE RESPONSIVE
+   RESPONSIVE
 ========================================================= */
+
+/* Tablet & below */
 @media (max-width: 768px) {
 
+  .page-wrapper {
+    padding-top: 7.5rem;
+  }
+
+  /* nav */
   .nav-menu-toggle {
     display: flex;
   }
 
   .nav-links {
     position: absolute;
-    top: 75px;
-    right: 10px;
+    top: 70px;
+    right: 12px;
     background: var(--card);
     padding: 1rem 2rem;
     border-radius: 15px;
@@ -386,15 +460,35 @@ body {
     display: flex;
   }
 
+  /* hero */
   .home-hero {
     flex-direction: column-reverse;
     text-align: center;
   }
 
+  .hero-right {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-caption {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-footer {
+    text-align: center;
+  }
+
+  /* about */
   .about-layout {
     grid-template-columns: 1fr;
   }
 
+  /* projects */
   .project-card {
     flex-direction: column;
     align-items: center;
@@ -402,15 +496,22 @@ body {
 
   .project-img {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
   }
 
+  /* skills */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
