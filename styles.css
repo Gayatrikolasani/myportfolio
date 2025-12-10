@@ -1,5 +1,5 @@
 /* ===================================
-   THEME VARIABLES
+   THEME VARIABLES — LIGHT MODE
 =================================== */
 :root {
   --bg: #fdeffd;
@@ -7,23 +7,30 @@
   --card: #ffffff;
   --nav-bg: rgba(255, 255, 255, 0.65);
   --nav-border: #ffffff60;
+
   --accent: #ff4fa2;
   --accent-light: #ff87c7;
   --tag-bg: #ffb7d9;
+
   --shadow: #ffd2e880;
   --shadow-pink: #ffb7d966;
 }
 
+/* ===================================
+   DARK THEME VARIABLES
+=================================== */
 .dark-theme {
   --bg: #1a1a1a;
   --text: #f5f5f5;
   --card: #2c2c2c;
   --nav-bg: rgba(40, 40, 40, 0.7);
   --nav-border: #444;
+
   --accent: #ff8dc7;
   --accent-light: #ffb0dd;
   --tag-bg: #66385c;
-  --shadow: #00000060;
+
+  --shadow: #00000050;
   --shadow-pink: #00000040;
 }
 
@@ -41,10 +48,9 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  transition: 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Page wrapper */
 .page-wrapper {
   padding: 8rem 1rem 4rem;
   max-width: 1100px;
@@ -63,7 +69,6 @@ body {
 /* ===================================
    NAVBAR
 =================================== */
-
 .navbar {
   width: 100%;
   position: fixed;
@@ -75,30 +80,56 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
   border-radius: 0 0 20px 20px;
   border: 1px solid var(--nav-border);
+  z-index: 1000;
 }
 
 .nav-logo {
-  font-size: 1rem;
-  font-weight: 600;
   background: var(--accent);
-  color: white;
   padding: 8px 14px;
+  color: white;
   border-radius: 50%;
   text-decoration: none;
+  font-weight: 600;
 }
 
-/* Menu icon (mobile) */
-.nav-menu-toggle {
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.theme-toggle {
   width: 40px;
   height: 40px;
   border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
   background: var(--card);
   color: var(--text);
-  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Mobile menu toggle */
+.nav-menu-toggle {
   display: none;
+  width: 40px;
+  height: 40px;
+  background: var(--card);
+  border-radius: 50%;
+  border: none;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -112,51 +143,15 @@ body {
   display: block;
 }
 
-/* Links */
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--accent);
-}
-
-/* Theme icon */
-.theme-toggle {
-  border: none;
-  background: var(--card);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: var(--text);
-  transition: 0.3s ease;
-}
-
 /* ===================================
-   HERO SECTION
+   HOME — HERO
 =================================== */
-
 .home-hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 3rem;
   gap: 2rem;
-}
-
-/* Left text */
-.hero-left {
-  flex: 1;
+  margin-top: 3rem;
 }
 
 .hero-tag {
@@ -164,14 +159,11 @@ body {
   padding: 4px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
-  margin-bottom: 1rem;
-  display: inline-block;
 }
 
 .hero-title {
   font-size: 2.2rem;
   font-weight: 700;
-  line-height: 1.3;
 }
 
 .hero-title span {
@@ -179,29 +171,22 @@ body {
 }
 
 .hero-caption {
-  margin: 1rem 0 2rem;
-  font-size: 1rem;
   max-width: 420px;
+  margin: 1rem 0 2rem;
 }
 
-/* Buttons */
 .btn {
   padding: 12px 26px;
   border-radius: 30px;
+  text-decoration: none;
   font-size: 0.95rem;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .btn-primary {
   background: linear-gradient(to right, var(--accent), var(--accent-light));
   color: white;
-}
-
-.btn-primary:hover {
-  opacity: 0.8;
 }
 
 .btn-secondary {
@@ -213,82 +198,194 @@ body {
   background: var(--tag-bg);
 }
 
-/* Right image */
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
 .hero-profile-img {
   width: 270px;
   height: 270px;
   border-radius: 50%;
-  object-fit: cover;
   border: 6px solid var(--tag-bg);
+  object-fit: cover;
   box-shadow: 0 0 30px var(--shadow-pink);
 }
 
 /* ===================================
-   SECTIONS
+   ABOUT PAGE
 =================================== */
 
-.section-card {
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  max-width: 600px;
+  opacity: 0.8;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 2rem;
+}
+
+.card {
   background: var(--card);
   padding: 2rem;
-  border-radius: 22px;
-  box-shadow: 0 0 20px var(--shadow);
-  margin-bottom: 2rem;
-  color: var(--text);
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.section-subtitle {
-  color: var(--text);
-  opacity: 0.8;
-  margin-bottom: 1.5rem;
-}
-
-.project-img {
-  width: 100%;
   border-radius: 20px;
+  box-shadow: 0 0 20px var(--shadow);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: linear-gradient(to right, var(--accent), var(--accent-light));
+  color: white;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+/* How I Work section */
+.personality-pill {
+  background: var(--tag-bg);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.personality-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   margin-bottom: 1rem;
 }
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 3rem;
-  padding: 2rem 0;
-  font-size: 0.85rem;
-  color: var(--text);
+/* ===================================
+   PROJECTS PAGE
+=================================== */
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px var(--shadow);
+  display: flex;
+  gap: 1.5rem;
+}
+
+.project-img {
+  width: 45%;
+  max-width: 380px;
+  border-radius: 18px;
+  box-shadow: 0 0 20px var(--shadow-pink);
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.project-desc {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.project-points li {
+  margin-bottom: 0.4rem;
 }
 
 /* ===================================
-   RESPONSIVE
+   SKILLS PAGE
 =================================== */
 
-/* Mobile */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.skill-card ul li {
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
+
+/* ===================================
+   CONTACT PAGE
+=================================== */
+
+.contact-card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 20px;
+  margin-top: 2rem;
+  box-shadow: 0 0 20px var(--shadow);
+}
+
+.contact-list {
+  margin-left: 1rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.8rem;
+}
+
+.contact-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  opacity: 0.8;
+}
+
+/* ===================================
+   RESPONSIVE STYLES
+=================================== */
+
 @media (max-width: 768px) {
   .nav-menu-toggle {
     display: flex;
   }
 
   .nav-links {
+    display: none;
     position: absolute;
     top: 75px;
     right: 10px;
-    background: var(--card);
     padding: 1rem 2rem;
-    border-radius: 15px;
     flex-direction: column;
     gap: 1rem;
-    display: none;
+    background: var(--card);
+    border-radius: 15px;
     box-shadow: 0 4px 25px var(--shadow);
   }
 
@@ -306,131 +403,19 @@ body {
     height: 230px;
   }
 
-  .hero-caption {
-    margin: 0 auto 1.5rem;
-  }
-}
-/* ===============================
-   PAGE HEADER
-=============================== */
-.page-header {
-  text-align: left;
-  margin-bottom: 2rem;
-}
-
-.page-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.page-subtitle {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  opacity: 0.8;
-  max-width: 650px;
-  color: var(--text);
-}
-
-/* ===============================
-   ABOUT PAGE LAYOUT
-=============================== */
-.about-layout {
-  display: grid;
-  grid-template-columns: 2fr 1.2fr;
-  gap: 2rem;
-}
-
-.card {
-  background: var(--card);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 0 20px var(--shadow);
-  color: var(--text);
-  transition: 0.3s ease;
-}
-
-/* Resume button */
-.resume-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 10px 20px;
-  border-radius: 25px;
-  background: linear-gradient(to right, var(--accent), var(--accent-light));
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.3s ease;
-}
-
-.resume-btn:hover {
-  opacity: 0.85;
-}
-
-/* ===============================
-   OPEN TO ROLES SECTION
-=============================== */
-.open-to-roles h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--text);
-}
-
-.roles-list {
-  margin-left: 1.2rem;
-}
-
-.roles-list li {
-  margin-bottom: 0.4rem;
-  color: var(--text);
-}
-
-/* ===============================
-   HOW I WORK CARD
-=============================== */
-.personality-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-
-.personality-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
-}
-
-.personality-pill {
-  background: var(--tag-bg);
-  padding: 6px 14px;
-  border-radius: 20px;
-  color: var(--text);
-  opacity: 0.9;
-  font-size: 0.85rem;
-}
-
-.personality-text {
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-
-.personality-bullets li {
-  margin-bottom: 0.5rem;
-  color: var(--text);
-}
-
-/* ===============================
-   RESPONSIVE FOR ABOUT PAGE
-=============================== */
-@media (max-width: 768px) {
   .about-layout {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 
-  .page-header {
-    text-align: center;
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-img {
+    width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
