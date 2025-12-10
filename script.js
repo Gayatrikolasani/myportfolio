@@ -1,66 +1,39 @@
-/* ===========================
-   MOBILE MENU TOGGLE
-=========================== */
+/* ============================
+   MOBILE NAV TOGGLE
+============================ */
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 
-navToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
 
-
-/* ===========================
+/* ============================
    THEME SWITCHER
-=========================== */
+============================ */
+const themeToggle = document.getElementById("themeToggle");
 
-// Buttons
-const themeBtn = document.getElementById("themeToggle");
-
-// Load saved theme on refresh
-let savedTheme = localStorage.getItem("theme");
+// Restore saved theme
+const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
-  document.body.classList.add("dark-mode");
-  themeBtn.textContent = "☀️"; // Sun icon for light mode toggle
+  document.documentElement.classList.add("dark-theme");
+  themeToggle.textContent = "☀️"; // Sun icon for dark mode
+} else {
+  themeToggle.textContent = "🌙"; // Moon icon for light mode
 }
 
-// Toggle theme
-themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+// Theme toggle click
+themeToggle.addEventListener("click", () => {
+  const isDark = document.documentElement.classList.toggle("dark-theme");
 
-  // If dark mode is ON
-  if (document.body.classList.contains("dark-mode")) {
-    themeBtn.textContent = "☀️";  // Sun icon
+  if (isDark) {
+    themeToggle.textContent = "☀️";
     localStorage.setItem("theme", "dark");
-  } 
-  // If dark mode is OFF
-  else {
-    themeBtn.textContent = "🌙"; // Moon icon
+  } else {
+    themeToggle.textContent = "🌙";
     localStorage.setItem("theme", "light");
   }
-});
-const themeToggle = document.getElementById("theme-toggle");
-const icon = document.getElementById("theme-icon");
-
-// Check saved theme
-if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.classList.add("dark-theme");
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
-}
-
-themeToggle.addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark-theme");
-
-    const isDark = document.documentElement.classList.contains("dark-theme");
-
-    if (isDark) {
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-        localStorage.setItem("theme", "dark");
-    } else {
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-        localStorage.setItem("theme", "light");
-    }
 });
