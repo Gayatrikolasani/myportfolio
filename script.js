@@ -1,36 +1,41 @@
-// THEME TOGGLE + SIMPLE FADE-IN
+/* ===========================
+   MOBILE MENU TOGGLE
+=========================== */
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
 
-(function () {
-  const body = document.body;
-  const toggleBtn = document.getElementById("themeToggle");
+navToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
 
-  // --------- THEME ----------
-  const savedTheme = localStorage.getItem("gk-theme");
 
-  if (savedTheme === "dark") {
-    body.classList.add("dark-theme");
-    if (toggleBtn) toggleBtn.textContent = "☀️";
-  } else {
-    if (toggleBtn) toggleBtn.textContent = "🌙";
+/* ===========================
+   THEME SWITCHER
+=========================== */
+
+// Buttons
+const themeBtn = document.getElementById("themeToggle");
+
+// Load saved theme on refresh
+let savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+  themeBtn.textContent = "☀️"; // Sun icon for light mode toggle
+}
+
+// Toggle theme
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  // If dark mode is ON
+  if (document.body.classList.contains("dark-mode")) {
+    themeBtn.textContent = "☀️";  // Sun icon
+    localStorage.setItem("theme", "dark");
+  } 
+  // If dark mode is OFF
+  else {
+    themeBtn.textContent = "🌙"; // Moon icon
+    localStorage.setItem("theme", "light");
   }
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      const isDark = body.classList.toggle("dark-theme");
-      toggleBtn.textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("gk-theme", isDark ? "dark" : "light");
-    });
-  }
-
-  // --------- FADE IN ON LOAD ----------
-  window.addEventListener("load", () => {
-    document
-      .querySelectorAll(".fade-in")
-      .forEach((el) => el.classList.add("show"));
-  });
-})();
-// MOBILE MENU TOGGLE
-document.getElementById("navToggle").onclick = function () {
-  document.getElementById("navLinks").classList.toggle("active");
-};
-
+});
