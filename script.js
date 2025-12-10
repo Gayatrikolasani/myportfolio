@@ -29,3 +29,8 @@
       .forEach((el) => el.classList.add("show"));
   });
 })();
+// MOBILE MENU TOGGLE
+document.getElementById("navToggle").onclick = function () {
+  document.getElementById("navLinks").classList.toggle("active");
+};
+
