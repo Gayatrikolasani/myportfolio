@@ -49,13 +49,14 @@
 body {
   background: var(--bg);
   color: var(--text);
+  line-height: 1.6;
   transition: background 0.3s, color 0.3s;
 }
 
 .page-wrapper {
   max-width: 1100px;
-  margin: auto;
-  padding: 8rem 1rem 4rem;
+  margin: 0 auto;
+  padding: 7rem 1rem 4rem; /* space for fixed navbar */
 }
 
 .fade-in {
@@ -81,21 +82,21 @@ body {
   align-items: center;
 
   padding: 0.8rem 1.4rem;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(20px);
   border-radius: 0 0 20px 20px;
-  border: 1px solid #ffffff50;
+  border: 1px solid #ffffff60;
 
   z-index: 1000;
 }
 .dark-theme .navbar {
-  background: rgba(20, 20, 30, 0.6);
-  border: 1px solid #333;
+  background: rgba(20, 20, 30, 0.8);
+  border-color: #333;
 }
 
 .nav-logo {
   background: var(--accent);
-  color: white;
+  color: #fff;
   padding: 8px 14px;
   font-size: 0.9rem;
   border-radius: 50%;
@@ -114,7 +115,7 @@ body {
   color: var(--text);
   font-size: 0.9rem;
   font-weight: 500;
-  transition: 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 .nav-links a:hover,
@@ -132,16 +133,19 @@ body {
   cursor: pointer;
   font-size: 1.2rem;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* mobile menu btn */
+/* mobile menu button */
 .nav-menu-toggle {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: none;
   background: var(--card);
-  display: none;
+  display: none;        /* shown only on mobile */
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -164,6 +168,13 @@ body {
   align-items: center;
   gap: 2.5rem;
   margin-top: 3rem;
+}
+
+.hero-left { flex: 1; }
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-tag {
@@ -203,14 +214,18 @@ body {
 
 .btn-primary {
   background: linear-gradient(to right, var(--accent), var(--accent-light));
-  color: white;
+  color: #fff;
+  margin-right: 0.5rem;
 }
-
 .btn-primary:hover { opacity: 0.85; }
 
 .btn-secondary {
   border: 2px solid var(--accent);
   color: var(--accent);
+  background: transparent;
+}
+.btn-secondary:hover {
+  background: var(--soft-bg);
 }
 
 .hero-profile-img {
@@ -223,7 +238,7 @@ body {
 }
 
 /* =========================================================
-   ABOUT PAGE
+   PAGE HEADERS
 ========================================================= */
 .page-header {
   margin-bottom: 2rem;
@@ -232,14 +247,17 @@ body {
 .page-title {
   font-size: 2rem;
   font-weight: 700;
+  margin-bottom: 0.3rem;
 }
 
 .page-subtitle {
   color: var(--muted);
-  max-width: 600px;
+  max-width: 650px;
 }
 
-/* two columns */
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
 .about-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -260,8 +278,9 @@ body {
   padding: 10px 18px;
   background: linear-gradient(to right, var(--accent), var(--accent-light));
   border-radius: 20px;
-  color: white;
+  color: #fff;
   text-decoration: none;
+  font-size: 0.9rem;
 }
 
 .open-to-roles {
@@ -271,7 +290,19 @@ body {
   border-radius: 14px;
 }
 
-/* pills */
+.open-to-roles h3 {
+  margin-bottom: 0.5rem;
+}
+
+.open-to-roles ul {
+  padding-left: 1.2rem;
+}
+
+/* How I work */
+.personality-title {
+  margin-bottom: 0.8rem;
+}
+
 .personality-pills {
   display: flex;
   flex-wrap: wrap;
@@ -284,6 +315,14 @@ body {
   padding: 5px 12px;
   border-radius: 14px;
   font-size: 0.8rem;
+}
+
+.personality-text {
+  margin-bottom: 0.8rem;
+}
+
+.personality-bullets {
+  padding-left: 1.2rem;
 }
 
 /* =========================================================
@@ -323,6 +362,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.project-points {
+  padding-left: 1.2rem;
+}
+
 /* =========================================================
    SKILLS PAGE
 ========================================================= */
@@ -357,13 +400,13 @@ body {
   text-align: center;
   margin-top: 3rem;
   color: var(--muted);
+  font-size: 0.85rem;
 }
 
 /* =========================================================
-   MOBILE RESPONSIVE
+   RESPONSIVE
 ========================================================= */
 @media (max-width: 768px) {
-
   /* nav */
   .nav-menu-toggle {
     display: flex;
@@ -371,7 +414,7 @@ body {
 
   .nav-links {
     position: absolute;
-    top: 75px;
+    top: 70px;
     right: 10px;
     background: var(--card);
     padding: 1rem 2rem;
@@ -392,7 +435,12 @@ body {
     text-align: center;
   }
 
-  /* about */
+  .hero-caption {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* about layout: stack */
   .about-layout {
     grid-template-columns: 1fr;
   }
@@ -405,17 +453,21 @@ body {
 
   .project-img {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
   }
 
   /* skills */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  @media (max-width: 480px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
-    }
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 2rem;
   }
 }
