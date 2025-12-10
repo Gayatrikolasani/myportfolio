@@ -1,7 +1,6 @@
 /* ===========================
    BASE THEME VARIABLES
-   =========================== */
-
+=========================== */
 :root {
   --bg-main: #fdf5fb;
   --bg-elevated: #ffffff;
@@ -19,7 +18,7 @@
   --transition-fast: 0.25s ease;
 }
 
-/* Dark theme override */
+/* Dark Theme */
 body.dark-theme {
   --bg-main: #050816;
   --bg-elevated: #0b1020;
@@ -34,58 +33,62 @@ body.dark-theme {
 }
 
 /* ===========================
-   GLOBAL RESET & BODY
-   =========================== */
-
+   GLOBAL RESET
+=========================== */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(244, 114, 182, 0.15), transparent 50%),
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(
+      circle at top left,
+      rgba(244, 114, 182, 0.15),
+      transparent 50%
+    ),
     var(--bg-main);
   color: var(--text-main);
   min-height: 100vh;
   transition: background 0.35s ease, color 0.35s ease;
 }
 
-/* Container */
 .page-wrapper {
   max-width: 1120px;
   margin: 0 auto;
   padding: 96px 18px 40px;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* ===========================
    NAVBAR
-   =========================== */
-
+=========================== */
 .navbar {
   position: fixed;
   top: 12px;
   left: 50%;
   transform: translateX(-50%);
   width: min(1120px, 94%);
-  z-index: 20;
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(18px);
-  border-radius: 999px;
   padding: 10px 18px;
+  border-radius: 999px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   border: 1px solid var(--border-subtle);
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+  z-index: 20;
 }
 
 body.dark-theme .navbar {
@@ -95,14 +98,14 @@ body.dark-theme .navbar {
 .nav-logo {
   width: 34px;
   height: 34px;
-  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, #fb7185, #f472b6);
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-weight: 700;
-  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(248, 113, 170, 0.6);
 }
 
 .nav-links {
@@ -111,193 +114,255 @@ body.dark-theme .navbar {
 }
 
 .nav-links a {
-  text-decoration: none;
   padding: 6px 12px;
   border-radius: 999px;
   color: var(--text-muted);
-  transition: 0.25s;
 }
 
+.nav-links a.active,
 .nav-links a:hover {
-  color: var(--accent);
-  background: var(--accent-soft);
-}
-
-.nav-links a.active {
   color: var(--accent-strong);
   background: var(--accent-soft);
 }
 
+/* Hide links in mobile */
+@media (max-width: 720px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Theme toggle */
 .theme-toggle {
   width: 34px;
   height: 34px;
-  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--bg-soft);
+  border-radius: 999px;
   border: 1px solid var(--border-subtle);
   cursor: pointer;
 }
 
 /* ===========================
    HOME PAGE
-   =========================== */
-
-.hero-profile-img {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid rgba(255, 120, 180, 0.3);
-    box-shadow: 0 10px 30px rgba(255, 120, 180, 0.25);
-    display: block;
-    margin: 0 auto;
+=========================== */
+.home-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 36px;
+  padding-bottom: 36px;
+  flex-wrap: wrap;
 }
 
-/* Remove card background behind image */
+.hero-left {
+  flex: 1.1;
+}
+
+.hero-tag {
+  padding: 4px 12px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: clamp(2.3rem, 4vw, 3rem);
+  margin: 18px 0 10px;
+}
+
+.hero-title span {
+  color: var(--accent-strong);
+}
+
+.hero-caption {
+  max-width: 520px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-right {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-profile-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255, 120, 180, 0.3);
+  box-shadow: 0 12px 32px rgba(248, 113, 170, 0.4);
+}
+
+/* Remove unwanted white box */
 .hero-image-card,
-.hero-photo-card,
 .hero-photo-wrapper {
   background: none !important;
-  box-shadow: none !important;
   border: none !important;
+  box-shadow: none !important;
   padding: 0 !important;
 }
 
-/* ================================
-   ABOUT PAGE
-================================ */
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+  .home-hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+  }
 
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-profile-img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* ===========================
+   ABOUT PAGE
+=========================== */
 .about-section {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
   gap: 40px;
 }
 
+@media (max-width: 900px) {
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+}
+
 .about-card {
   background: var(--bg-elevated);
   padding: 28px;
   border-radius: 20px;
-  border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
 }
 
+.about-card p {
+  margin-bottom: 16px;
+}
+
+/* Open to roles */
 .open-to-roles {
   background: rgba(255, 200, 230, 0.22);
   border: 1px dashed rgba(248, 113, 170, 0.6);
+  border-radius: 16px;
   padding: 18px;
-  border-radius: var(--radius-lg);
-  margin-top: 22px;
+  margin-top: 20px;
 }
 
-/* ===========================
-   OPEN TO ROLES — BULLETS FIX
-   =========================== */
-
-.open-roles-bullets {
-    list-style: disc !important;
-    padding-left: 22px;
-    margin-top: 10px;
-    font-size: 1rem;
-    color: var(--text-main);
+.roles-list {
+  list-style: disc;
+  padding-left: 22px;
 }
 
-.open-roles-bullets li {
-    margin-bottom: 6px;
-    line-height: 1.5;
-}
-
-/* ===========================
-   PERSONALITY SECTION
-   =========================== */
-
+/* Personality card */
 .personality-card {
   background: var(--bg-elevated);
   padding: 24px;
   border-radius: 20px;
-  border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+}
+
+.personality-title {
+  margin-top: 0;
 }
 
 .personality-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 14px;
 }
 
 .personality-pill {
   padding: 6px 14px;
   background: var(--accent-soft);
-  border-radius: 999px;
-  font-size: 0.9rem;
-  color: var(--accent);
+  color: var(--accent-strong);
+  border-radius: 20px;
   font-weight: 600;
 }
 
-.personality-bullets {
-    list-style: disc !important;
-    padding-left: 22px;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.personality-bullets li {
-  margin-bottom: 8px;
-}
-
 /* ===========================
-   PROJECT PAGE
-   =========================== */
+   PROJECTS PAGE
+=========================== */
+.projects-container {
+  display: grid;
+  gap: 24px;
+}
+
+.project-card {
+  padding: 20px;
+  background: var(--bg-elevated);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+}
 
 .project-img-round {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: contain;
-    border-radius: 18px;
-    background: #fff;
-    padding: 8px;
-    margin-bottom: 12px;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 16px;
+  padding: 8px;
+  background: #fff;
 }
 
 /* ===========================
    SKILLS PAGE
-   =========================== */
+=========================== */
+.skills-grid {
+  display: grid;
+  gap: 20px;
+}
 
 .skill-card {
-  background: var(--bg-elevated);
   padding: 20px;
+  background: var(--bg-elevated);
   border-radius: 20px;
-  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
 }
 
 /* ===========================
    CONTACT PAGE
-   =========================== */
-
+=========================== */
 .contact-card {
+  padding: 24px;
+  background: var(--bg-elevated);
+  border-radius: 20px;
   max-width: 640px;
   margin: 0 auto;
-  background: radial-gradient(circle at top left, var(--accent-soft), transparent 60%),
-    var(--bg-elevated);
-  padding: 24px;
-  border-radius: 20px;
-  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
 }
 
 /* ===========================
    FOOTER
-   =========================== */
-
+=========================== */
 .footer {
   text-align: center;
-  padding: 18px 0;
+  padding: 20px 0;
   color: var(--text-muted);
 }
 
-/* ===========================
-   ANIMATIONS
-   =========================== */
-
+/* Fade animation */
 .fade-in {
   opacity: 0;
   transform: translateY(14px);
