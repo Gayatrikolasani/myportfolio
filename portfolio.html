@@ -1,72 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About • Gayatri Kolasani</title>
-    <link rel="stylesheet" href="styles.css?v=30">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About • Gayatri Kolasani</title>
+  <link rel="stylesheet" href="styles.css?v=30" />
 </head>
-
-<body>
-
-<header class="navbar">
+<body class="light">
+  <!-- NAVBAR -->
+  <header class="navbar">
     <a href="index.html" class="nav-logo">GK</a>
-
     <nav class="nav-links">
-        <a href="portfolio.html" class="active">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="portfolio.html#skills">Skills</a>
-        <a href="contact.html">Contact</a>
+      <a href="portfolio.html" class="active">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
     </nav>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </header>
 
-    <button id="themeToggle" class="theme-toggle">🌙</button>
-</header>
+  <main class="page">
+    <!-- ABOUT -->
+    <section class="section fade-in">
+      <header class="section-header">
+        <h2>About Me</h2>
+        <p>Brief overview of who I am and how I work.</p>
+      </header>
 
-<section class="about-wrapper">
+      <div class="about-grid">
+        <!-- About text & resume -->
+        <article class="card soft-card">
+          <h3 class="section-subtitle">Profile</h3>
+          <p>
+            I’m a 2025 graduate in <strong>Computer Science & Engineering (AI)</strong> from
+            KKR &amp; KSR Institute of Technology and Sciences, Guntur.
+            I enjoy exploring how data, machine learning, and business come together to
+            solve meaningful real-world problems.
+          </p>
+          <p>
+            Recently, I engineered an
+            <strong>AI-powered career guidance system</strong> that delivers personalized
+            career paths, skill-gap insights, and measurable improvements in
+            recommendation quality. I also contributed to an
+            <strong>autonomous shopping trolley</strong> in a robotics hackathon,
+            focusing on intelligent navigation and control.
+          </p>
 
-    <div class="about-left">
-        <img src="profile.jpg" alt="Gayatri Kolasani" class="about-img">
-    </div>
+          <div class="resume-box">
+            <a href="KolasaniG.pdf" class="btn-primary" download>
+              Download resume
+            </a>
+          </div>
+        </article>
 
-    <div class="about-card">
-        <h1>About Me</h1>
+        <!-- Personality -->
+        <article class="card">
+          <h3 class="section-subtitle">How I work</h3>
+          <ul class="personality-list">
+            <li><strong>Analytical:</strong> I like breaking down problems into structured, data-driven steps.</li>
+            <li><strong>Curious:</strong> I enjoy learning new tools, libraries, and ways to interpret data.</li>
+            <li><strong>Collaborative:</strong> I like working in teams, asking questions, and sharing ideas clearly.</li>
+            <li><strong>Detail-oriented:</strong> I care about clean data, readable code, and clear communication.</li>
+            <li><strong>Outcome-focused:</strong> I’m motivated by building solutions that real users can benefit from.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-        <p>
-            I'm a Computer Science & Engineering (AI) graduate specializing in machine learning,
-            data analytics, and intelligent automation.
-        </p>
-
-        <p>
-            I engineered an <strong>AI-powered career guidance system</strong> delivering personalized career paths,
-            skill-gap insights, and measurable improvements in recommendation accuracy.
-        </p>
-
-        <a href="KolasaniG.pdf" class="resume-btn" download>Download Resume</a>
-
-        <h3>Core Skills</h3>
-        <ul class="skills-list">
-            <li>Python & SQL</li>
-            <li>Machine Learning</li>
-            <li>Data Cleaning & Visualization</li>
-            <li>AI/ML Model Evaluation</li>
-            <li>Teamwork & Communication</li>
+    <!-- OPEN TO ROLES -->
+    <section class="section fade-in">
+      <div class="open-to-roles">
+        <h2>Open to Roles</h2>
+        <p>I’m actively seeking opportunities such as:</p>
+        <ul class="roles-list">
+          <li>🟣 Data Analyst / Business Analyst</li>
+          <li>🟣 Analytics or ML-focused roles</li>
+          <li>🟣 Entry-level Product / Insights Analyst positions</li>
         </ul>
-    </div>
+      </div>
+    </section>
+  </main>
 
-</section>
+  <footer class="footer">
+    © 2025 Gayatri Kolasani. All rights reserved.
+  </footer>
 
-<section class="open-to-roles fade-in">
-    <h2>Open to Roles</h2>
-    <p>Actively seeking opportunities in:</p>
-
-    <ul class="roles-list">
-        <li>Business / Data Analyst</li>
-        <li>AI / ML Analyst</li>
-        <li>Product Analyst (Entry Level)</li>
-    </ul>
-</section>
-
-<script src="script.js?v=30"></script>
+  <script src="script.js?v=30"></script>
 </body>
 </html>
