@@ -1,89 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects • Gayatri Kolasani</title>
-    <link rel="stylesheet" href="styles.css?v=30" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects • Gayatri Kolasani</title>
+  <link rel="stylesheet" href="styles.css?v=30" />
 </head>
-
-<body>
-
-<header class="navbar">
+<body class="light">
+  <!-- NAVBAR -->
+  <header class="navbar">
     <a href="index.html" class="nav-logo">GK</a>
-
     <nav class="nav-links">
-        <a href="portfolio.html">About</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="portfolio.html#skills">Skills</a>
-        <a href="contact.html">Contact</a>
+      <a href="portfolio.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
     </nav>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </header>
 
-    <button id="themeToggle" class="theme-toggle">🌙</button>
-</header>
+  <main class="page">
+    <section class="section projects-section fade-in">
+      <header class="section-header">
+        <h2>My Projects</h2>
+        <p>Selected work showcasing my experience in data, AI, and automation.</p>
+      </header>
 
-<section class="projects-page">
-    <h1 class="page-title">My Projects</h1>
-    <p class="page-subtitle">Selected work showcasing my experience in AI, robotics, and analytics.</p>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <img src="career-guidance.jpg" alt="AI Career Guidance System" class="project-img" />
 
-    <div class="projects-grid">
-
-        <!-- PROJECT 1 -->
-        <div class="project-card">
-            <img src="career-guidance.jpg" class="project-img" alt="Career Guidance System">
-
+          <div class="project-content">
             <h3>AI-Powered Career Pathway Guidance System</h3>
-
+            <p class="project-role">Role: ML &amp; Data Pipeline Developer</p>
             <p class="project-desc">
-                Designed and implemented an AI-driven system to generate personalized recommendations by analyzing
-                skills, profiles and real-time job trends.
+              Designed and implemented an AI-driven system that generates personalized
+              career recommendations by analyzing user profiles and real-time job market
+              trends. The system helps students make informed career decisions.
             </p>
-
-            <ul class="project-list">
-                <li>Generated <strong>500+ career recommendations</strong> with 80% user satisfaction.</li>
-                <li>Improved matching accuracy by 20% using TF-IDF + Word2Vec + KNN.</li>
-                <li>Built prediction pipeline and automated scoring dashboards.</li>
-                <li>Evaluated system reliability using Cohen’s Kappa.</li>
+            <ul class="project-points">
+              <li>Generated <strong>500+ career recommendations</strong> with an <strong>80% user satisfaction</strong> rating based on feedback surveys.</li>
+              <li>Used <strong>TF-IDF and Word2Vec</strong> for feature extraction, improving processing speed by 30% and reducing noise.</li>
+              <li>Applied <strong>KNN and XGBoost</strong> for ranking and matching profiles, improving prediction accuracy by 20%.</li>
+              <li>Integrated skill-gap analysis with personalized suggestions for courses, tools, and certifications.</li>
+              <li>Evaluated alignment using <strong>Cohen’s Kappa</strong> to ensure quality of recommended paths.</li>
             </ul>
 
-            <div class="tag-box">
-                <span>Python</span>
-                <span>ML</span>
-                <span>NLP</span>
-                <span>KNN</span>
-                <span>XGBoost</span>
+            <div class="project-tags">
+              <span>Python</span><span>TF-IDF</span><span>KNN</span>
+              <span>XGBoost</span><span>Data Preprocessing</span>
             </div>
-        </div>
+          </div>
+        </article>
 
-        <!-- PROJECT 2 -->
-        <div class="project-card">
-            <img src="robot-trolley.jpg" class="project-img" alt="Robot Trolley">
+        <!-- Project 2 -->
+        <article class="project-card">
+          <img src="robot-trolley.jpg" alt="Autonomous Shopping Trolley" class="project-img" />
 
+          <div class="project-content">
             <h3>Autonomous Shopping Trolley (Robotics Hackathon)</h3>
-
+            <p class="project-role">Role: Team Lead &amp; Python Developer</p>
             <p class="project-desc">
-                Built an autonomous robot trolley with real-time navigation and obstacle detection for logistics and retail.
+              Developed an autonomous robot trolley in a 36-hour hackathon
+              to help transport goods across industries such as warehousing, healthcare,
+              and retail.
             </p>
-
-            <ul class="project-list">
-                <li>Developed Python-based navigation & control algorithms.</li>
-                <li>Integrated ultrasonic sensors for environment awareness.</li>
-                <li>Improved detection accuracy by 60% using filtered sensor fusion.</li>
-                <li>Tested behavior through 3D simulation environment.</li>
+            <ul class="project-points">
+              <li>Built the trolley using <strong>ROS</strong> with real-time navigation and control.</li>
+              <li>Enhanced situational awareness with <strong>3D visualization &amp; simulation</strong>.</li>
+              <li>Integrated Python scripts that reduced execution errors by around <strong>60%</strong>, improving reliability.</li>
+              <li>Led a team of six, coordinating design, development, testing, and final presentation.</li>
             </ul>
 
-            <div class="tag-box">
-                <span>Python</span>
-                <span>Robotics</span>
-                <span>ROS</span>
-                <span>Simulation</span>
+            <div class="project-tags">
+              <span>Python</span><span>ROS</span><span>Robotics</span>
+              <span>Simulation</span><span>Team Leadership</span>
             </div>
-        </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 
-    </div>
-</section>
+  <footer class="footer">
+    © 2025 Gayatri Kolasani. All rights reserved.
+  </footer>
 
-<script src="script.js?v=30"></script>
+  <script src="script.js?v=30"></script>
 </body>
 </html>
