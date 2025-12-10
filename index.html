@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gayatri Kolasani • Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=30" />
-</head>
-<body class="light">
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <a href="index.html" class="nav-logo">GK</a>
-    <nav class="nav-links">
-      <a href="portfolio.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-  </header>
-
-  <!-- MAIN CONTENT -->
-  <main class="page">
-    <section class="hero">
-      <div class="hero-left fade-in">
-        <p class="hero-tag">Data & AI Enthusiast · Graduate 2025</p>
-        <h1>Hi, I’m <span class="accent">Gayatri</span>.</h1>
-        <p class="hero-text">
-          “Transforming data into decisions — where analytical insight meets AI intelligence.”
-        </p>
-
-        <div class="hero-buttons">
-          <a href="portfolio.html" class="btn-primary">View my portfolio</a>
-          <a href="projects.html" class="btn-outline">See projects</a>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gayatri Kolasani • Portfolio</title>
+    <link rel="stylesheet" href="styles.css?v=1" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo">GK</a>
       </div>
 
-      <div class="hero-right fade-in-delayed">
-        <div class="hero-photo-wrapper">
-          <img src="profile.jpg" alt="Gayatri Kolasani" class="hero-photo" />
-        </div>
+      <nav class="nav-links">
+        <a href="portfolio.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-toggle">🌙</button>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="footer">
-    © 2025 Gayatri Kolasani. All rights reserved.
-  </footer>
+    <main class="page-wrapper">
+      <!-- HOME HERO -->
+      <section class="home-hero fade-in">
+        <div class="hero-left">
+          <div class="hero-tag">CSE (AI) • Data & Business Analytics</div>
 
-  <script src="script.js?v=30"></script>
-</body>
+          <h1 class="hero-title">
+            Aspiring <span>Data Analyst</span> and AI-Enthusiast
+          </h1>
+
+          <p class="hero-caption">
+            “Transforming data into decisions — where analytical insight meets AI intelligence.”
+          </p>
+
+          <div class="hero-buttons">
+            <a href="portfolio.html" class="btn btn-primary">View my portfolio</a>
+            <a href="KolasaniG.pdf" class="btn btn-secondary" download>
+              Download resume
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-image-card">
+            <img
+              src="profile.jpg"
+              alt="Photo of Gayatri Kolasani"
+              class="hero-profile-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © 2025 ·  by Gayatri Kolasani
+    </footer>
+
+    <script src="script.js?v=1"></script>
+  </body>
 </html>
