@@ -1,112 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects • Gayatri Kolasani</title>
-    <link rel="stylesheet" href="styles.css?v=1" />
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <header class="navbar">
-      <div class="nav-left">
-        <a href="index.html" class="nav-logo">GK</a>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects • Gayatri Kolasani</title>
+  <link rel="stylesheet" href="styles.css?v=3" />
+</head>
 
-      <nav class="nav-links">
-        <a href="portfolio.html">About</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="skills.html">Skills</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="nav-logo">GK</a>
 
-      <div class="nav-right">
-        <button id="themeToggle" class="theme-toggle">🌙</button>
-      </div>
-    </header>
+    <nav class="nav-links">
+      <a href="portfolio.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-    <main class="page-wrapper projects-section fade-in">
-      <header>
-        <h1 class="page-title">Projects</h1>
-        <p class="page-subtitle">
-          A snapshot of the work I’ve done in AI, analytics, and automation.
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </header>
+
+  <main class="page-wrapper fade-in">
+    <h1 class="page-title">Projects</h1>
+
+    <section class="projects-container">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="career-guidance.jpg" class="project-img-round" />
+
+        <h3>AI-Powered Career Pathway Guidance System</h3>
+
+        <p class="project-desc">
+          A machine learning model that recommends personalized career paths by
+          analyzing user profiles, skill gaps, and performance metrics.
         </p>
-      </header>
 
-      <div class="projects-container">
-        <!-- Project 1 -->
-        <article class="project-card">
-          <img
-            src="career-guidance.jpg"
-            alt="AI-Powered Career Guidance System"
-            class="project-img-round"
-          />
-
-          <h3>AI-Powered Career Pathway Guidance System</h3>
-
-          <p class="project-desc">
-            Designed and implemented an AI-driven recommendation system that
-            suggests personalized career pathways by analyzing user profiles,
-            skills, and preferences.
-          </p>
-
-          <ul class="project-points">
-            <li>
-              Built an end-to-end pipeline using Python, Scikit-learn, and
-              vectorization techniques such as TF-IDF.
-            </li>
-            <li>
-              Applied ML algorithms for ranking and matching career options with
-              students’ profiles.
-            </li>
-            <li>
-              Incorporated feedback loops to continuously improve recommendation
-              quality.
-            </li>
-            <li>
-              Evaluated system performance using metrics like accuracy and
-              Cohen’s Kappa.
-            </li>
-          </ul>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project-card">
-          <img
-            src="robot-trolley.jpg"
-            alt="Autonomous Shopping Trolley Robot"
-            class="project-img-round"
-          />
-
-          <h3>Autonomous Shopping Trolley (Robotics Hackathon)</h3>
-
-          <p class="project-desc">
-            Co-developed an autonomous robot trolley that assists with goods
-            movement in retail, healthcare, and warehouse environments.
-          </p>
-
-          <ul class="project-points">
-            <li>
-              Implemented robot control and logic using Python and ROS in a
-              36-hour national-level hackathon.
-            </li>
-            <li>
-              Enhanced navigation and obstacle detection using sensors and 3D
-              simulation.
-            </li>
-            <li>
-              Collaborated with a team of six to divide responsibilities and
-              deliver a functional prototype.
-            </li>
-          </ul>
-        </article>
+        <ul class="project-points">
+          <li>Achieved 88% user satisfaction with accurate recommendations.</li>
+          <li>Used NLP+vectorization to reduce incorrect suggestions by 30%.</li>
+          <li>Used K-Means & KNN for clustering and prediction.</li>
+          <li>Delivered dashboards for actionable insights.</li>
+        </ul>
       </div>
-    </main>
 
-    <footer class="footer">
-      © 2025 · by Gayatri Kolasani
-    </footer>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="A_2D_digital_illustration_depicts_an_autonomous_sh.png"
+             class="project-img-round" />
 
-    <script src="script.js?v=1"></script>
-  </body>
+        <h3>Autonomous Shopping Trolley</h3>
+
+        <p class="project-desc">
+          A robotics project using Python & ROS to build a trolley capable of
+          obstacle detection, navigation, and movement automation.
+        </p>
+
+        <ul class="project-points">
+          <li>Integrated ultrasonic sensors and Python-based control logic.</li>
+          <li>Improved obstacle detection by 60%.</li>
+          <li>Tested navigation using 3D simulation.</li>
+          <li>Enhanced automation flow for smoother movement.</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">© 2025 · by Gayatri Kolasani</footer>
+
+  <script src="script.js?v=3"></script>
+</body>
 </html>
